@@ -1,0 +1,12 @@
+set number
+set autoindent
+set incsearch
+set wildmenu
+set confirm
+set showmode
+set title
+set tabstop=4
+
+syntax on
+colorscheme desert
+set laststatus=2

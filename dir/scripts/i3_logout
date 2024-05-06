@@ -1,0 +1,39 @@
+#! /bin/bash
+
+#set variable
+user_name="$(whoami)"
+first_question="Você quer:"
+opt0="Desligar\nReiniciar\nSair do i3"
+opt1="Sim\nNão"
+
+ask() {
+	response="$( echo -e $1 | dmenu -p "$2" -l $3)"
+}
+ask "$opt0" "$user_name $first_question" "3"
+
+case $response in
+	"Desligar")
+		ask "$opt1" "Você quer desligar o computador?" "2"
+		if [[ $response == "Sim" ]]; then
+			systemctl poweroff
+		fi
+		exit 0
+		;;
+	"Reiniciar")
+		ask "$opt1" "Você quer reiniciar o computador?" "2"
+		if [[ $response == "Sim" ]]; then
+			systemctl reboot
+		fi
+		exit 0
+		;;
+	"Sair do i3")
+		ask "$opt1" "Você quer sair do i3?" "2"
+		if [[ $response == "Sim" ]]; then
+			i3-msg exit
+		fi
+		exit 0
+		;;
+
+esac
+
+exit 0
