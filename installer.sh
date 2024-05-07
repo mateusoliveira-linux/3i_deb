@@ -30,7 +30,8 @@ for arg in $@; do
 				nitrogen \
 				curl \
 				htop \
-				pcmanfm
+				pcmanfm \
+				lightdm
 			;;
 		"--dev")
 			apt install -y git \
