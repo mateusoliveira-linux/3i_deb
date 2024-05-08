@@ -19,7 +19,7 @@ else
 	done
 fi
 
-apt updade
+apt update
 
 for arg in $@; do
 	case $arg in
@@ -31,6 +31,8 @@ for arg in $@; do
 				curl \
 				htop \
 				pcmanfm \
+				pulseaudio \
+				lm-sensors \
 				lightdm
 			;;
 		"--dev")
