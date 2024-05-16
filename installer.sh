@@ -31,6 +31,7 @@ for arg in $@; do
 				curl \
 				htop \
 				pcmanfm \
+				flatpak \
 				pulseaudio \
 				lm-sensors \
 				lightdm
@@ -39,11 +40,13 @@ for arg in $@; do
 			apt install -y git \
 				vim \
 				build-essential \
+				python3-pip \
 				simulide
 			;;
 		"--midea")
 			apt install -y mirage \
 				antril \
+				moc \
 				vlc
 			;;
 		"--web")

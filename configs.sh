@@ -24,12 +24,14 @@ cp -r ./dir/wallpapers $HOME/.local/
 
 cp ./config/bashrc $HOME/.bashrc
 cp ./config/vimrc $HOME/.vimrc
+cp ./config/i3blocks.conf $HOME/.i3blocks.conf 
 
-if [ -d $HOME/.config/i3 ];then
-	cp ./config/config $HOME/.config/i3/config
+if [ -d $HOME/.config ];then
+	cp -r ./dir/i3 $HOME/.config/
 else
-	mkdir -p $HOME/.config/i3
-	cp ./config/config $HOME/.config/i3/config
+	mkdir -p $HOME/.config
+	cp -r ./dir/i3 $HOME/.config/
+else
 fi
 
 cp ./config/user-dirs.dirs $HOME/.config/user-dirs.dirs
